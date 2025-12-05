@@ -1,0 +1,12 @@
+{"properties": [
+  {
+    "name": "component.fakestore.name",
+    "type": "java.lang.String",
+    "description": "api client name for fakestore"
+  },
+  {
+    "name": "component.fakestore.url",
+    "type": "java.lang.String",
+    "description": "api client url for fakestore'"
+  }
+]}
