@@ -1,0 +1,27 @@
+spring:
+  jpa:
+    hibernate:
+      dialect: org.hibernate.dialect.SQLServer2012Dialect
+      ddl-auto: update
+    show-sql: 'true'
+  application:
+    name: client-service
+  datasource:
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    password: '{cipher}4cf77e83e3b1cf846ae869d6f9b4633b669797986ab865716794ca602af29173'
+    username: sa
+    url: jdbc:sqlserver://localhost:1433;databaseName=ventas
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+jwt:
+  time:
+    expiration: '86400000'
+  secret:
+    key: '{cipher}a407a34416e9e82b64ad1cee38bb68c570ee8354a1128092ef8359a7b91af2aa145e05d2f43260e5a866fc3f2b9ad9c2103f17a2a78a936c74a42d2e4491cd783aba9bead26529a2216df2b8419e61e888c31321f503359320b05005cd171779'
+server:
+  port: '8087'
+  error:
+    include-message: always
+
+debug: true
