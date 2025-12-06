@@ -1,0 +1,295 @@
+{
+	"info": {
+		"_postman_id": "a1a8d620-4fd4-463f-b563-0e766f1f2f7c",
+		"name": "my store",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19510070",
+		"_collection_link": "https://testing-team-4750.postman.co/workspace/Test-evaluations~ecfbf786-cf58-451c-9cba-4f54ad06198b/collection/19510070-a1a8d620-4fd4-463f-b563-0e766f1f2f7c?action=share&source=collection_link&creator=19510070"
+	},
+	"item": [
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Create Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlcm9uYWxkIiwiaWF0IjoxNzYzNTg2NDc5LCJleHAiOjE3NjM2NzI4Nzl9.AOt26f0xIitVOAymqUQrHZe-VqZmjSi2VTn62W-Af_U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": 1,\r\n  \"totalAmount\": 16.25,\r\n  \"details\": [\r\n    {\r\n        \"productId\": 1,\r\n        \"price\": 10.25\r\n    },{\r\n        \"productId\": 2,\r\n        \"price\": 6\r\n    }]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/order/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"order",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Orders by client",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwbWFyaWEyIiwiaWF0IjoxNzY0ODkzMDAyLCJleHAiOjE3NjQ5Nzk0MDJ9.zXm1kSKlcyLlmLGXeEKMG4GBL4EYKfRoh4psFD9nARg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/order/client/my-orders?page=0&size=3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"order",
+								"client",
+								"my-orders"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "login autenticación",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"eronald\",\r\n    \"password\": \"Prueba\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create user",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"pmaria2@test.com\",\r\n  \"username\": \"pmaria3\",\r\n  \"password\": \"Prueba\",\r\n  \"nombres\": \"Juan\",\r\n  \"apellidos\": \"Perez\",\r\n  \"direccion\": \"San Salvador\",\r\n  \"telefono\": \"777877\",\r\n  \"codEstado\": 1,\r\n  \"roles\": [\"ADMIN\",\"USER\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/user/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlcm9uYWxkIiwiaWF0IjoxNzY0ODcyODgzLCJleHAiOjE3NjQ5NTkyODN9.EpAmvK3rytZtHlzTKUxz6vHBqdf5eFxxM-UMMWLEhKg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 10002,\r\n  \"enable\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/user/status",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"status"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payment",
+			"item": [
+				{
+					"name": "Pay Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlcm9uYWxkIiwiaWF0IjoxNzYzNTg2NDc5LCJleHAiOjE3NjM2NzI4Nzl9.AOt26f0xIitVOAymqUQrHZe-VqZmjSi2VTn62W-Af_U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/payment/order/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"payment",
+								"order",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Get product by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlcm9uYWxkIiwiaWF0IjoxNzYzMzE1MzQ1LCJleHAiOjE3NjM0MDE3NDV9.Ql4g6ojWMeczgpDV2GxTOACJ6jepJkCcwEIz9WAg4WY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/products/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlcm9uYWxkIiwiaWF0IjoxNzYzMzE1MzQ1LCJleHAiOjE3NjM0MDE3NDV9.Ql4g6ojWMeczgpDV2GxTOACJ6jepJkCcwEIz9WAg4WY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/products/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

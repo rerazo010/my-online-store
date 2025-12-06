@@ -10,12 +10,3 @@ spring:
     import: configserver:http://localhost:8888
   application:
     name: product-service
-
-component:
-  fakestore:
-    name: fakestoreapi
-    url: https://fakestoreapi.com
-
-server:
-  error:
-    include-message: always
